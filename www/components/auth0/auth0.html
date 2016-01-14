@@ -1,0 +1,16 @@
+
+<h1>Auth0</h1>
+
+{{auth0}}
+<hr>
+<input type="submit" ng-click="auth0.login()" value="Login" />
+<hr>
+<input type="submit" ng-click="auth0.signup()" value="Signup" />
+<hr>
+<input type="submit" ng-click="auth0.reset()" value="Reset Password" />
+<hr>
+<input type="submit" ng-click="auth0.logout()" value="Logout" />
+<hr>
+isAuthenticated: {{auth0.isAuthenticated}}
+<hr>
+profile: {{auth0.profile}}

@@ -1,0 +1,28 @@
+<md-dialog ng-controller="SiteController as site">
+    <md-content layout-padding>
+        <md-subheader style="    background: grey;
+    margin: 0px;
+    width: 100%;
+    color: white;">Add POS</md-subheader>
+        <form >
+            <br>
+            <md-input-container>
+                <label>Pos Name</label>
+                <input type="text" name="title"  ng-model="site.pos.name">
+            </md-input-container>
+            <md-input-container>
+                <label>Location</label>
+                <textarea ng-model="site.pos.address"></textarea>
+            </md-input-container>
+            <div layout="row" layout-padding>
+                <div flex>
+                    <md-button class="md-raised search " >Cancel</md-button>
+                </div>
+                <div flex>
+                    <md-button class="md-raised md-primary search" type="submit" ng-click="site.savePos(site.pos)">Add </md-button>
+                </div>
+            </div>
+
+        </form>
+    </md-content>
+</md-dialog>

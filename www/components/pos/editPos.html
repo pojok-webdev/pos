@@ -1,0 +1,24 @@
+<md-dialog style="width: 100%">
+    <div class="header-dialog1">Add Pos</div>
+    <md-content layout-padding>
+        <form>
+            <md-input-container>
+                <label>POS Name</label>
+                <input ng-model="register.name">
+            </md-input-container>
+            <md-input-container>
+                <label>Location</label>
+                <textarea ng-model="register.address"></textarea>
+            </md-input-container>
+            <md-input-container>            
+                <label>Select Catalog</label>
+                <md-select name="myModel" ng-model="catalog" required>
+                    <md-option  ng-repeat="item in pos.catalogs" ng-value="{{item}}">{{item.name}}</md-option>
+                </md-select>
+            </md-input-container>
+            <input type="hidden" ng-model="register.storeId" />
+        </form>
+        <md-button style="float: right" class="md-raised md-primary" ng-click="pos.update(register,catalog)"> Save</md-button>
+        <md-button style="float: right" class="md-raised" ng-click="pos.removePos(register)"> Delete</md-button>
+    </md-content>
+</md-dialog>

@@ -1,0 +1,45 @@
+<md-dialog ng-controller="CatalogController as catalog">
+    <md-content layout-padding>
+        <md-subheader style="    background: grey;
+    margin: 0px;
+    width: 100%;
+    color: white;">Custom Sale</md-subheader>
+        <form >
+            <br>
+            <md-input-container>
+                <label>Title</label>
+                <input type="text" name="title" ng-model="customSale.productName">
+            </md-input-container>
+            <md-input-container>
+                <label>Price</label>
+                <input name="itemPrice" ng-model="customSale.sellPrice">
+
+            </md-input-container>
+            <br>
+            <div style="text-align:center;">
+
+                <md-button class="md-fab md-mini md-primary" ng-click="redQty()">
+                    -
+                </md-button>
+
+
+                <a style="padding:40px;">{{quantity}}</a>
+
+
+                <md-button class="md-fab md-mini md-primary" ng-click="addQty()">
+                    +
+                </md-button>
+
+            </div>
+            <div layout="row" layout-padding>
+                <div flex>
+                    <md-button class="md-raised search " >Cancel</md-button>
+                </div>
+                <div flex>
+                    <md-button class="md-raised md-primary search" type="submit" ng-click="catalog.saveCustomSale(customSale,quantity)">Add to Cart</md-button>
+                </div>
+            </div>
+
+        </form>
+    </md-content>
+</md-dialog>

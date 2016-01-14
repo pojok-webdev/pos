@@ -1,0 +1,25 @@
+<md-dialog style="width: 100%" ng-controller="SiteController as site">
+    <div class="header-dialog1">Add Site</div>
+    <md-content layout-padding>
+        <form>
+            <md-input-container>
+                <label>Site Name</label>
+                <input ng-model="site.store.name">
+            </md-input-container>
+            <md-input-container>
+                <label>Address</label>
+                <textarea ng-model="site.store.address"></textarea>
+            </md-input-container>
+            <md-input-container>
+                <label>Phone</label>
+                <input ng-model="site.store.phone">
+            </md-input-container>
+            <md-input-container>
+                <label>Email</label>
+                <input ng-model="site.store.email">
+            </md-input-container>
+        </form>
+        <md-button style="float: right" class="md-raised md-primary" ng-click="site.updateSite(site.store)"> Save</md-button>
+        <md-button style="float: right" class="md-raised" ng-click="site.removeSite(site.store)"> Delete</md-button>
+    </md-content>
+</md-dialog>

@@ -1,0 +1,89 @@
+<!--<h1>Admin Page</h1>
+
+<div style="background-color: blue;">
+  <gandalf-sidemenu>sidemenu</gandalf-sidemenu>
+</div>
+		<md-button ng-click="admin.addStoreDialog()">Add Store</md-button>
+<h2>{{admin.hello}}</h2>
+<p>My controller name is admin</p>
+
+
+<div layout="row">
+<div flex="15">STORE_ID</div><div flex="20">NAME</div><div flex="20">ADDRESS</div><div flex="10">ACTION</div>
+</div>
+<div layout="row" ng-repeat="item in admin.items">
+<div flex="15">{{item.storeId}}</div><div flex="20">{{item.name}}</div><div flex="20">{{item.address}}</div>
+<div flex="10"><md-button ng-click="admin.editStoreDialog(item)">EDIT</md-button><md-button ng-click="admin.removeStore(item)">REMOVE</md-button></div>
+</div>
+-->
+
+<md-toolbar >
+  <div class="md-toolbar-tools">
+    <gandalf-sidemenu></gandalf-sidemenu>
+    <md-menu style="padding-left: 10px">
+      <span ng-click="$mdOpenMenu($event)"><ng-md-icon class="icon-menu" size="25" icon="domain" ></ng-md-icon>Company</span>
+      <md-menu-content width="4" layout-padding>
+        <md-menu-item ng-click="admin.addCompany()">
+          <ng-md-icon style="fill:grey; width: auto; padding-left: 0px; padding-right: 5px;" size="20" icon="add_circle"></ng-md-icon> <a style="padding-left: 0px;">Add New</a>
+        </md-menu-item>
+        <md-divider></md-divider>
+        <md-menu-item ui-sref="company({companyId:item.companyId})" ng-repeat="item in admin.companies">
+          {{item.name}}
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+    <md-menu >
+      <span><ng-md-icon  class="icon-menu" size="25" icon="location_on" ></ng-md-icon>Site</span>
+      <md-menu-content width="4" layout-padding>
+        <md-menu-item ng-click="admin.addSite()">
+          <ng-md-icon style="fill:grey; width: auto; padding-left: 0px; padding-right: 5px;" size="20" icon="add_circle"></ng-md-icon> <a style="padding-left: 0px;">Add New</a>
+        </md-menu-item>
+        <md-divider></md-divider>
+        <md-menu-item ui-sref="site({storeId:item.storeId})" ng-repeat="item in admin.companies.stores">
+          {{item.name}
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+    <md-menu >
+      <span><ng-md-icon  class="icon-menu" size="25" icon="store_mall_directory" ></ng-md-icon>Pos</span>
+      <md-menu-content width="4" layout-padding>
+        <md-menu-item ng-click="admin.addPos()">
+          <ng-md-icon style="fill:grey; width: auto; padding-left: 0px; padding-right: 5px;" size="20" icon="add_circle"></ng-md-icon> <a style="padding-left: 0px;">Add New</a>
+        </md-menu-item>
+        <md-divider></md-divider>
+        <md-menu-item ui-sref="pos">
+          pos1
+        </md-menu-item>
+        <md-divider></md-divider>
+        <md-menu-item>
+          pos2
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+    <md-menu >
+      <span ng-click="$mdOpenMenu($event)"><ng-md-icon class="icon-menu" size="25" icon="shopping_basket" ></ng-md-icon>Product Catalog</span>
+      <md-menu-content width="4" layout-padding>
+        <md-menu-item ng-click="admin.addCatalog()">
+          <ng-md-icon style="fill:grey; width: auto; padding-left: 0px; padding-right: 5px;" size="20" icon="add_circle"></ng-md-icon> <a style="padding-left: 0px;">Add New</a>
+        </md-menu-item>
+        <md-divider></md-divider>
+        <md-menu-item ui-sref="product({catalogId:catalog.catalogId})" ng-repeat="catalog in admin.catalogs">
+          {{catalog.name}}
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+
+
+
+    <span flex>
+
+    </span>
+    <gandalf-login style="float: right;
+    position: relative;
+    right: -10px;
+    cursor: pointer;"></gandalf-login>
+  </div>
+</md-toolbar>
+<md-content layout-padding>
+
+</md-content>

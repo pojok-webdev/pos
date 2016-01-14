@@ -1,0 +1,33 @@
+
+<md-toolbar >
+    <div class="md-toolbar-tools">
+        <span flex>
+	  <gandalf-sidemenu></gandalf-sidemenu>
+        </span>
+        Cart
+        <span flex>
+        </span>
+
+    </div>
+</md-toolbar>
+ <md-content style="background:#FAFAFA; height: 90%" layout-padding>
+     <div class="cart-item">
+         <md-list>
+             <md-list-item ng-click="catalog.qty(i)" ng-repeat="i in catalog.order.orders">
+                 <img src={{i.imageUrl}} class="md-avatar"  />
+                 <p style="font-size: 1em;">{{i.productId}} - {{i.name}} ({{i.qty}})</p>
+                 <a style="font-size: 1em;">Rp. {{i.subTotal|number}}</a>
+                 <md-divider></md-divider>
+             </md-list-item>
+
+
+         </md-list>
+     </div>
+ </md-content>
+ <div class="checkout-sm" ng-click="catalog.checkOut(catalog.order)">
+     <a style="    position: absolute;
+    top: 0px;
+    font-size: 0.8em;">Checkout</a>
+     <a style="font-size: 1.5em;">Total</a>
+     <a style="float: right; font-size: 1.5em; padding-right: 20px;">Rp. {{catalog.order.total|number}}</a>
+ </div>

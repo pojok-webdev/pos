@@ -1,0 +1,91 @@
+<md-toolbar ng-controller="PosController as pos">
+    <div class="md-toolbar-tools">
+	  <gandalf-sidemenu></gandalf-sidemenu>
+        <span hide-gt-sm flex></span>
+        <span hide-gt-sm >
+    Pos
+      </span>
+    <span hide-sm>
+            <md-menu style="padding-left: 10px">
+                <span ng-click="$mdOpenMenu($event)"><ng-md-icon style="fill:white;top: 3px; position: relative; " size="25" icon="domain" ></ng-md-icon>{{pos.company.name}}</span>
+                <md-menu-content width="4" layout-padding>
+                    <md-menu-item  ng-click="pos.addCompany()">
+                        <ng-md-icon style="fill:grey; width: auto; padding-left: 0px; padding-right: 5px;" size="20" icon="add_circle"></ng-md-icon> <a style="padding-left: 0px;">Add New</a>
+                    </md-menu-item>
+                    <md-divider></md-divider>
+                    <md-menu-item ui-sref="company({companyId:item.companyId})" ng-repeat="item in pos.companies">
+                        {{item.name}}
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+             <md-menu >
+                 <span ng-click="$mdOpenMenu($event)"><ng-md-icon style="fill:white;top: 3px; position: relative; " size="25" icon="location_on" ></ng-md-icon>{{pos.store.name}}</span>
+                 <md-menu-content width="4" layout-padding>
+                     <md-menu-item ng-click="pos.addsite()">
+                         <ng-md-icon style="fill:grey; width: auto; padding-left: 0px; padding-right: 5px;" size="20" icon="add_circle"></ng-md-icon> <a style="padding-left: 0px;">Add New</a>
+                     </md-menu-item>
+                     <md-divider></md-divider>
+                     <md-menu-item ui-sref="site({storeId:item.storeId})" ng-repeat="item in pos.stores">
+                         {{item.name}}
+                     </md-menu-item>
+                 </md-menu-content>
+             </md-menu>
+             <md-menu >
+                 <span ng-click="$mdOpenMenu($event)"><ng-md-icon style="fill:white;top: 3px; position: relative; " size="25" icon="store_mall_directory" ></ng-md-icon>{{pos.register.name}}</span>
+                 <md-menu-content width="4" layout-padding>
+                     <md-menu-item ng-click="pos.addCpos()">
+                         <ng-md-icon style="fill:grey; width: auto; padding-left: 0px; padding-right: 5px;" size="20" icon="add_circle"></ng-md-icon> <a style="padding-left: 0px;">Add New</a>
+                     </md-menu-item>
+                     <md-divider></md-divider>
+                     <md-menu-item ui-sref="pos({registerId:item.registerId})" ng-repeat="item in pos.registers">
+                         {{item.name}}
+                     </md-menu-item>
+                 </md-menu-content>
+             </md-menu>
+            <md-menu >
+                <span ng-click="$mdOpenMenu($event)"><ng-md-icon style="fill:white;top: 3px; position: relative; " size="25" icon="shopping_basket" ></ng-md-icon>Product Catalog</span>
+                <md-menu-content width="4" layout-padding>
+                    <md-menu-item ng-click="admin.addCatalog()">
+                        <ng-md-icon style="fill:grey; width: auto; padding-left: 0px; padding-right: 5px;" size="20" icon="add_circle"></ng-md-icon> <a style="padding-left: 0px;">Add New</a>
+                    </md-menu-item>
+                    <md-divider></md-divider>
+                    <md-menu-item ui-sref="product({catalogId:item.catalogId})" ng-repeat="item in pos.catalogs">
+                        {{item.name}}
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </span>
+
+
+        <span flex>
+
+    </span>
+        <gandalf-login style="float: right;
+    position: relative;
+    right: -10px;
+    cursor: pointer;"></gandalf-login>
+    </div>
+</md-toolbar>
+<md-content layout-padding>
+    <div layout="row">
+        <div flex>
+            <md-card>
+                <div class="dialog-head">
+                   <span hide-gt-sm><ng-md-icon style="fill:white;top: 3px; position: relative; " size="22" icon="shopping_basket" ></ng-md-icon>{{company.name}} - {{store.name}} - {{pos.register.name}}</span>
+                    <span hide-sm><ng-md-icon style="fill:white;top: 3px; position: relative; " size="22" icon="shopping_basket" ></ng-md-icon>{{pos.register.name}}</span>
+
+                </div>
+                <md-card-content>
+                    <a>Location:</a>
+                    <a>{{pos.register.address}}</a><br>
+                    <a>Catalog:</a>
+                    <a>{{pos.register.catalog.name}}</a><br>
+                    <md-button style="float: right" ng-click="pos.editPos()" class="md-raised md-primary"> Edit</md-button>
+                </md-card-content>
+
+            </md-card>
+
+
+        </div>
+    </div>
+</md-content>

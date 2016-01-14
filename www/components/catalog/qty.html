@@ -1,0 +1,31 @@
+<md-dialog ng-controller="CatalogController as catalog" >
+    <md-content layout-padding>
+        <md-subheader style="    background: grey;
+    margin: 0px;
+    width: 100%;
+    color: white;">{{purchasedItem.name}}</md-subheader>
+        <br>
+        <form >
+
+            <div style="text-align:center;">
+
+                <md-button class="md-fab md-mini md-primary"  ng-click="reduceQty()">
+                    -
+                </md-button>
+
+
+                <a style="padding:40px;">{{quantity}}</a>
+
+                <md-button class="md-fab md-mini md-primary" ng-click="addQty()">
+                    +
+                </md-button>
+            </div>
+            <br>
+            <md-button class="md-raised md-primary" style="width: 95%;" type="submit" ng-click="catalog.changeQty(purchasedItem,quantity)">OK</md-button>
+
+
+
+        </form>
+
+    </md-content>
+</md-dialog>

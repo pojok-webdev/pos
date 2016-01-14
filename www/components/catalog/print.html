@@ -1,0 +1,82 @@
+<md-dialog ng-controller="CatalogController as catalog" style="width: 60%">
+    <md-content layout-padding>
+        <div class="header-dialog" style="width: <97%></97%>">
+            Print Receipt,  {{catalog.register.name}}
+        </div>
+        <br>
+        <div class="receipt">
+
+            <div layout="row">
+                <div flex>
+                    <a>Order ID:</a>
+                    <br>
+                    <a>Date:</a>
+                    <br>
+                    <a></a>
+                    <br>
+                </div>
+                <div flex style="text-align: right;">
+                    <a>{{order.orderId}}</a>
+                    <br>
+                    <a>{{order.dateTime}}</a>
+                    <br>
+                    <a></a>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <md-divider></md-divider>
+            <br>
+            <div layout="row" ng-repeat="item in order.orders">
+                <div flex>
+                    <a>{{item.name}}({{item.qty}})</a>
+                    <br>
+                </div>
+                <div flex style="text-align: right;">
+                    <a>Rp. {{item.subTotal|number}}</a>
+                    <br>
+                </div>
+            </div>
+            <md-divider></md-divider>
+            <br>
+            <div layout="row">
+                <div flex>
+                    <a>Total</a>
+                    <br>
+                    <a>Cash</a>
+                    <br>
+                    <a>Change</a>
+                    <br>
+                </div>
+                <div flex style="text-align: right;">
+                    <a>Rp. {{order.total|number}}</a>
+                    <br>
+                    <a>Rp. {{custCash|number}}</a>
+                    <br>
+                    <a>Rp. {{change|number}}</a>
+                    <br>
+                </div>
+            </div>
+
+
+        </div>
+        <br />
+            <div layout="row">
+                <div flex>
+                    <a>Cust email:</a>
+                </div>
+                <div flex style="text-align: right;">
+                    <a><input ng-model="order.custEmail" type="email" placeholder="Email"></a>
+                </div>
+            </div>
+        
+        <br>
+        <md-button style="    width: 95%;" class="md-raised md-primary" ng-click="catalog.saveOrder(order)">Print</md-button>
+    </md-content>
+</md-dialog>
+<style>
+    .md-subheader-wrapper:not(.md-sticky-no-effect)[sticky-state="active"] {
+        margin-top: -2px;
+        margin-left: -10px;
+    }
+</style>

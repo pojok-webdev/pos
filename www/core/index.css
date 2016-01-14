@@ -1,0 +1,255 @@
+.md-datepicker-input-container {
+    width: 80%;
+    margin-left: 0px;}
+.md-button.md-icon-button {
+    margin: 0 0px;
+    width: 30px;}
+.recomend{
+    height: 150px;
+}
+.recomend-h1{
+    color: white;
+    text-shadow: 2px 2px grey;
+    margin: 0px;
+}
+.recomend-h4{
+    color: white;
+    margin: 0px;
+}
+.price-start{
+    float: right;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    color: white;
+    background-color: #F44336;
+    padding: 5px;
+}
+md-input-container {
+    padding-bottom: 0px;
+}
+.height{
+    height: 100%;
+}
+.profile-thumb{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    float: right;
+}
+.profile{
+    border-radius: 50%;
+    width: 50%;
+}
+md-select {
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+.margin0{
+    margin: 0px;
+}
+
+.height-right{
+    overflow:auto;
+    height:100%;
+    background-color:#FAFAFA;
+
+}
+.height-left{
+    overflow:auto;
+    height:100%;
+    padding-bottom:80px;
+    padding-top:70px;
+}
+.toolbar-fixed{
+    position: fixed;
+    top: 0px;
+}
+.checkout{
+    position: fixed;
+    bottom: 0px;
+    width:33%;
+    padding: 20px;
+    border: 2px #F44336 solid;
+    padding-right:10px;
+    padding-left:10px;
+    color:white;
+    cursor: pointer;
+    background-color:#F44336;
+
+}
+.checkout-sm{
+    position: fixed;
+    bottom: 0px;
+    width:100%;
+    padding: 20px;
+    border: 2px #F44336 solid;
+    padding-right:10px;
+    padding-left:10px;
+    color:white;
+    cursor: pointer;
+    background-color:#F44336;
+
+}
+.cart-item{
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+.footer-left{
+    position: fixed;
+    bottom: 0px;
+    background: #FAFAFA;
+    width: 65%;
+    padding: 0px;
+}
+.footer-left-sm{
+    position: fixed;
+    bottom: 0px;
+    background: #FAFAFA;
+    width: 100%;
+    padding: 0px;
+}
+md-grid-list md-grid-tile md-grid-tile-header, md-grid-list md-grid-tile md-grid-tile-footer{
+    height: 42px;
+    background: rgba(0, 0, 0, 0.5);
+    padding-top: 5px; padding-bottom: 5px;
+}
+
+md-subheader{
+    background: grey;
+    margin: 0px;
+    width: 100%;
+    color: white;
+}
+md-toolbar .md-menu{
+   top: -3px; position: relative; padding-right: 13px;
+    cursor: pointer;
+}
+md-menu-item{
+    min-height: auto;
+    height: auto;
+    padding: 10px;
+}
+.header-dialog{
+    background: grey;
+    margin: 0px;
+    width: 93%;
+    color: white; padding: 10px
+}
+.header-dialog1{
+    background: grey;
+    margin: 0px;
+    width: 100%;
+    color: white; padding: 10px
+}
+.header-dialog2{
+    background: grey;
+    margin: 0px;
+    width: 97%;
+    color: white; padding: 10px
+}
+.add-button{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+.input-file{
+    font-size: 0.7em;
+    color: grey;
+    padding-left: 5px;
+}
+.dialog-head{
+    background: #F44336;
+    color: white;
+    padding: 10px;
+    text-transform: uppercase;
+}
+.bulk{
+    color: grey; font-size: 0.9em;
+    cursor: pointer;
+}
+.bulk:hover{
+    color:  #F44336; font-size: 0.9em;
+}
+.bulk-area{
+    height: 30%;
+    border: dashed #E0E0E0 2px;
+    margin: 10px;
+    background: #F5F5F5;
+    text-align: center;
+}
+.bulk-text{
+    position: relative;
+    top: 30%;
+    color: grey;
+}
+.bulk-text p {
+    font-size: 1.4em;
+}
+.login-content {
+    top: %;
+    position: relative;
+}
+.card-head{
+    background: #F44336;
+    color: white;
+    padding-left: 20px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+.icon-menu {
+    fill:white;top: 3px;     padding-right: 3px; position: relative;
+}
+md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-active, md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-focused {
+    color:  #F44336;
+}
+md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]) {
+    color: grey;
+}
+.md-datepicker-calendar-pane.md-pane-open {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    background: white;
+}
+.md-button.number{
+    margin: 2px;
+    margin-right: -2px;
+    padding: 0px;
+    height: 60px;
+}
+.md-button.number1{
+    margin: 2px;
+    margin-right: -2px;
+    padding: 0px;
+    height: 50px;
+    font-size:0.8em;
+}
+.cash{
+    text-align: right;
+    font-size: 1.6em;
+    margin-right: 10px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+md-grid-list md-grid-tile md-grid-tile-header h3, md-grid-list md-grid-tile md-grid-tile-footer h3 {
+    font-size: 16px;
+    margin-left: 4px;
+    width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+md-grid-list md-grid-tile md-grid-tile-header h3, md-grid-list md-grid-tile md-grid-tile-footer h4 {
+    font-size: 14px;
+    margin-left: 4px;
+}
+@media screen and (min-width: 1200px) {
+    md-grid-list md-grid-tile md-grid-tile-header h3, md-grid-list md-grid-tile md-grid-tile-footer h3 {
+        font-size: 16px;
+        margin-left: 4px;
+        width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

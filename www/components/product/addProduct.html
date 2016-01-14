@@ -1,0 +1,101 @@
+<md-dialog ng-controller="ProductController as prod" style="width: 60%">
+    <md-content layout-padding>
+        <div class="header-dialog1" style="width: 97%">Add Product</div>
+        <form>
+            <br>
+            <md-input-container>
+                <label>Product Name</label>
+                <input type="text" name="productName"  ng-model="product.productName">
+            </md-input-container>
+            <md-input-container>
+                <label>Price</label>
+                <input type="number" ng-model="product.sellPrice">
+            </md-input-container>
+            <br>
+
+            <md-input-container>
+                <label>Sell Tax Code</label>
+                <input type="text" ng-model="product.sellTaxCode">
+            </md-input-container>
+            <br />
+            
+            <label class="input-file">Photo</label>
+            <md-input-container>
+                <img ng-src="{{productImage}}" ng-click="imageClick()" width="200" height="200">
+                <input type="file" style="display:none" ng-model="gbr" id="file" onchange="angular.element(this).scope().upload(event)">
+            </md-input-container>
+      <br>      
+          <label class="input-file">Category</label>  
+            <md-input-container>
+            <div>
+                <md-checkbox ng-model="product.categoryNames.food" aria-label="Checkbox 2" ng-true-value="'food'" ng-false-value="'nope'" ng-change="categoryClick('food',product.categoryNames.food)">
+                Makanan
+                </md-checkbox>
+                </div>
+                <div>
+                <md-checkbox ng-model="product.categoryNames.drink" aria-label="Checkbox 2" ng-true-value="'drink'" ng-false-value="'nope'" ng-change="categoryClick('drink',product.categoryNames.drink)">
+                    Minuman
+                </md-checkbox>
+                </div>
+                <div>
+                <md-checkbox ng-model="product.categoryNames.package" aria-label="Checkbox 2" ng-true-value="'package'" ng-false-value="'nope'" ng-change="categoryClick('package',product.categoryNames.package)">
+                    Paket
+                </md-checkbox>
+                </div>
+            </md-input-container>
+            
+            <br />
+            
+            <md-input-container>
+                <label>Tags</label>
+                <input type="text" ng-model="product.tags">
+            </md-input-container>
+            <br />
+
+
+            <md-input-container>
+                <div>
+                <md-checkbox ng-model="product.isModifier" aria-label="IsModifier" ng-true-value="'ismodifier'" ng-false-value="'nope'">
+                    Is Modifier
+                </md-checkbox>
+                </div>
+            </md-input-container>
+            <br />
+            <md-input-container>
+                <label>Barcode</label>
+                <input type="text" ng-model="product.barcode">
+            </md-input-container>
+            <br />
+            
+            <md-input-container>
+                <label>Cost Price</label>
+                <input type="text" name="costPrice" ng-model="product.costPrice">
+            </md-input-container>
+            <br />
+
+            <md-input-container>
+                <label>Cost Tax Code</label>
+                <input type="text" name="costTaxCode" ng-model="product.costTaxCode">
+            </md-input-container>
+            <br />
+
+            <md-input-container>
+                <label>Description</label>
+                <input type="text" ng-model="product.description">
+            </md-input-container>
+            <br />
+            <input type="hidden" value={{categories}}
+            <input type="hidden" value="{{fr}}" />
+
+            <div layout="row" layout-padding style="padding-left: 0px">
+                <div flex>
+                    <md-button class="md-raised search " style="width:100%;">Cancel</md-button>
+                </div>
+                <div flex>
+                    <md-button class="md-raised md-primary search" style="width:100%;" type="submit" ng-click="prod.saveProduct(product,categories,fr,productImage)">Add </md-button>
+                </div>
+            </div>
+
+        </form>
+    </md-content>
+</md-dialog>

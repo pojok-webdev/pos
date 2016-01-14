@@ -1,0 +1,43 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <span flex>
+        </span>
+        <img src="./components/login/img/logo-chicken.png" width="100px">
+
+        <span flex>
+        </span>
+
+    </div>
+</md-toolbar>
+
+<md-content layout-padding style="background:#F5F5F5; height:90%" ng-controller="ChoosePosController as choosePos">
+    <br><br>
+    <div class="login-content" layout="row">
+        <div flex-md="20" flex-lg="20" flex-gt-lg="30">
+
+        </div>
+        <div flex>
+            <center><h2>Welcome WANDA!</h2></center>
+            <br>
+            <md-card style="background: white; width: 80%; margin: auto;border-radius: 20px;">
+                <div class="card-head"><p>Choose Pos</p></div>
+                <md-card-content>
+
+                    <md-input-container class="md-block">
+                        <label>Choose Pos</label>
+                        <md-select name="myModel" ng-model="choosePos.register" required ng-change="choosePos.checkVal()">
+                            <md-option  ng-repeat="item in choosePos.registers" ng-value="item">{{item.name}}</md-option>
+                        </md-select>
+                    </md-input-container>
+                    <br>
+                    <md-button ng-disabled="choosePos.checkRegister()" class="md-primary md-raised md-block" ui-sref="catalog({registerId:choosePos.register.registerId})" style="width: 95%;" > OK</md-button>
+                </md-card-content>
+            </md-card>
+        </div>
+        <div flex-md="20" flex-lg="20" flex-gt-lg="30">
+
+
+        </div>
+    </div>
+
+</md-content>

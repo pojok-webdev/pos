@@ -1,0 +1,18 @@
+<md-dialog style="width: 100%" ng-controller="PosController as pos">
+    <div class="header-dialog1">Add Pos</div>
+    <md-content layout-padding>
+        <form>
+            <md-input-container>
+                <label>Catalog Name</label>
+                <input ng-model="catalog.name">
+            </md-input-container>
+            <md-input-container>
+                <label>Description</label>
+                <textarea ng-model="catalog.address"></textarea>
+            </md-input-container>
+            <input type="hidden" ng-model="catalog.registerId" />
+        </form>
+        <md-button style="float: right" class="md-raised md-primary" ng-click="pos.saveCatalog(register)"> Save</md-button>
+        <md-button style="float: right" class="md-raised"> Delete</md-button>
+    </md-content>
+</md-dialog>

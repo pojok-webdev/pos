@@ -1,0 +1,30 @@
+<md-dialog  ng-controller="CompanyController as company">
+    <md-content layout-padding>
+        <md-subheader style="    background: grey;
+    margin: 0px;
+    width: 100%;
+    color: white;">Add Site</md-subheader>
+        <form >
+            <br>
+            <md-input-container>
+                <label>Site Name</label>
+                <input type="text" name="title" ng-model="company.store.name">
+            </md-input-container>
+            <md-input-container>
+                <label>Address</label>
+                <textarea ng-model="company.store.address"></textarea>
+            </md-input-container>
+            <input type="hidden" name="storeId" ng-model="company.store.storeId">
+            <input type="hidden" name="companyId" ng-model="company.store.companyId">
+            <div layout="row" layout-padding>
+                <div flex>
+                    <md-button class="md-raised search " >Cancel</md-button>
+                </div>
+                <div flex>
+                    <md-button class="md-raised md-primary search" type="submit" ng-click="company.saveSite(company.store)">Add </md-button>
+                </div>
+            </div>
+
+        </form>
+    </md-content>
+</md-dialog>

@@ -1,0 +1,86 @@
+<md-dialog ng-controller="CatalogController as catalog" style="width: 380px">
+    <md-content layout-padding>
+        <md-subheader style="    background: grey;
+    margin: 0px;
+    width: 100%;
+    color: white;">Cash</md-subheader>
+        <p class="cash">{{custCash}}</p>
+        <md-divider></md-divider>
+        <md-button class="number1 md-raised md-accent md-hue-2" ng-click="updateCash('10000')">
+            Rp. 10000
+        </md-button>
+        <md-button class="number1 md-raised md-accent md-hue-2" ng-click="updateCash('20000')">
+            Rp. 20000
+        </md-button>
+        <md-button class=" number1 md-raised md-accent md-hue-2" ng-click="updateCash('50000')" >
+            Rp. 50000
+        </md-button>
+        <md-button class=" number1  md-raised md-accent md-hue-2" ng-click="updateCash('100000')">
+            Rp. 100000
+        </md-button>
+        <div layout="row">
+
+            <div flex>
+                <md-button class="number md-raised md-accent md-hue-2" ng-click="updateCash('7')">
+                    7
+                </md-button>
+                <md-button class="number md-raised md-accent md-hue-2" ng-click="updateCash('8')">
+                    8
+                </md-button>
+                <md-button class=" number md-raised md-accent md-hue-2" ng-click="updateCash('9')">
+                    9
+                </md-button><br>
+                <md-button class=" number  md-raised md-accent md-hue-2" ng-click="updateCash('4')">
+                    4
+                </md-button>
+                <md-button class="number md-raised md-accent md-hue-2" ng-click="updateCash('5')">
+                    5
+                </md-button>
+                <md-button class="number md-raised md-accent md-hue-2" ng-click="updateCash('6')">
+                    6
+                </md-button><br>
+                <md-button class="number md-raised md-accent md-hue-2" ng-click="updateCash('1')">
+                    1
+                </md-button>
+                <md-button class="number md-raised md-accent md-hue-2" ng-click="updateCash('2')">
+                    2
+                </md-button>
+                <md-button class="number md-raised md-accent md-hue-2" ng-click="updateCash('3')">
+                    3
+                </md-button><br>
+                <md-button style="width: 66%;"class="number  md-raised md-accent md-hue-2" ng-click="updateCash('0')">
+                    0
+                </md-button>
+                <md-button class="number  md-raised md-accent md-hue-2" ng-click="updateCash('00')">
+                    00
+                </md-button><br>
+            </div>
+            <div flex="20">
+                <md-button style="height: 125px; margin-left: 5px;" class="number md-raised md-accent md-hue-1" ng-click="updateCash('del')">
+                    Del
+                </md-button>
+                <md-button style="height: 125px;  margin-left: 5px;" class=" number md-raised md-primary " ng-click='catalog.printDialog($event)'>
+                    OK
+                </md-button>
+            </div>
+            <div flex="5">
+            </div>
+        </div>
+       <!-- <form >
+            <br>
+            <md-input-container>
+                <label>Cash</label>
+                <input type="number" ng-model='custCash' name="title" >
+            </md-input-container>
+                <input type="hidden" ng-model='order' value={{order}}>
+            </form>
+        <div layout="row" layout-padding>
+            <div flex>
+                <md-button class="md-raised search " >Cancel</md-button>
+            </div>
+            <div flex>
+                <md-button class="md-raised md-primary  search" ng-click='catalog.printDialog($event)' type="submit">checkout</md-button>
+            </div>
+        </div>-->
+    </md-content>
+</md-dialog>

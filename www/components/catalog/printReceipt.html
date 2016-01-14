@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>POS</title>
+	<style>
+		.wrap {
+			width: 420px;
+			margin: 5px auto;
+			padding: 10px;
+			font-family: 'arial';
+			font-size: 12px;
+		}
+		
+		.logo {
+			display: block;
+			margin: 2px auto;
+		}
+		
+		.address {
+			text-transform: uppercase;
+			font-weight: bold;
+			text-align: center;
+		}
+		
+		.currency {
+			text-align: right;
+		}
+		
+		.bold {
+			font-weight: bold;
+		}
+		
+		.clr {
+			clear: both;
+		}
+		
+		#content {
+			margin-top: 20px;
+		}
+		
+		#header {
+			width: 300px;
+		}
+		
+		#footer {
+			margin-top: 20px;
+		}
+		
+		#prepared {
+			float: left;
+			width: 200px;
+			margin-right: 20px;
+		}
+		
+		#guest {
+			float: left;
+			width: 200px;
+		}
+		
+		table {
+			width: 75%;
+			border-collapse: collapse;
+			border: 1px solid #000;
+		}
+		
+		tbody {
+			min-height: 100px;
+		}
+		
+		th {
+			padding: 5px;
+			border: 1px solid #000;
+		}
+		
+		td {
+			padding: 5px;
+			border-left: 1px solid #000;
+			border-right: 1px solid #000;
+		}
+		
+		tfoot td {
+			border: 1px solid #000;
+		}
+	</style>
+	<script type="text/javascript" src="/theme/js/jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+				window.print();
+				//window.location = 'http://ayamqu/sell/index';
+			});
+	</script>
+</head>
+
+<body>
+	<div class="wrap">
+		<div id="header">
+			<span style="font-weight: bold; ">No: 40</span>
+			<span style="font-weight: bold; float:right;">Date: 26 Oct 2015</span>
+			<div class="clr"></div>
+		</div>
+		<div id="content">
+			<table>
+				<thead>
+					<tr>
+						<th colspan="5">&nbsp;</th>
+						<th width="19%">Copy</th>
+					</tr>
+					<tr>
+						<th width="5%">No.</th>
+						<th width="35%">Description</th>
+						<th width="10%">Qty</th>
+						<th width="15%">Price</th>
+						<th width="10%">Disc</th>
+						<th>Total</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td> PAKET DAPIL-1 PAHA HOT </td>
+						<td>1</td>
+						<td class="currency">22,000</td>
+						<td class="currency">0</td>
+						<td class="currency">22,000</td>
+					</tr>
+				</tbody>
+				<tfoot>
+
+
+					<tr>
+						<td colspan="5" class="currency bold">Total Paid</td>
+						<td class="currency bold">100,000,000</td>
+					</tr>
+
+
+					<tr>
+						<td colspan="5" class="currency bold">Payment type -- Cash</td>
+						<td class="currency bold">22,000</td>
+					</tr>
+
+					<tr>
+						<td colspan="5" class="currency bold">Total</td>
+						<td class="currency bold">22,000</td>
+					</tr>
+
+					<tr>
+						<td colspan="5" class="currency bold">Change</td>
+						<td class="currency bold">99,978,000</td>
+
+
+					</tr>
+					<tr>
+						<td colspan="5" class="currency bold">User : </td>
+						<td class="currency bold">Rahma</td>
+					</tr>
+					<tr>
+						<td colspan="5" class="currency bold">Outlet at : </td>
+						<td class="currency bold">Ayam Cobloos Citra Raya</td>
+
+					</tr>
+					<tr>
+						<td colspan="5">&nbsp;</td>
+						<td class="currency bold"><a href="javascript:window.print()" class="button-1 no-print">print</a></td>
+					</tr>
+
+					<tr>
+						<td colspan="5">&nbsp;</td>
+						<td class="currency bold"><a href="http://localhost:8080/#/catalog/">back</a></td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+		<div id="footer">
+
+
+			<div id="prepared">
+				Prepared by,
+				<br /> Rahma </div>
+			<div id="guest">
+				Guest Signature,
+				<br />
+			</div>
+			<div class="clr"></div>
+		</div>
+	</div>
+</body>
+
+</html>

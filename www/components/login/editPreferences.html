@@ -1,0 +1,40 @@
+<md-dialog style="width: 60%">
+    <md-content layout-padding>
+        <div class="header-dialog1" style="width: 97%">Edit Preferences</div>
+        <form>
+            <br>
+            <md-input-container>
+                <label>Choose Register</label>
+                <md-select name="myModel"
+                ng-model="choosenRegister" required ng-value="choosenRegister.name">
+                    <md-option ng-value="item" ng-repeat="item in preferences.registers">
+                    {{item.name}}
+                    </md-option>
+                </md-select>
+
+            </md-input-container>
+            
+            <div layout="row" layout-padding style="padding-left: 0px">
+                <div flex>
+                    <md-button class="md-accent" ng-click="preferences.clearData()">Clear Data</md-button>
+                    <md-button class="md-accent" ng-click="preferences.createSampleData()">Create Sample Data </md-button>
+                    
+                </div>
+                <div flex>
+                </div>
+            </div>
+
+            <div layout="row" layout-padding style="padding-left: 0px">
+                <div flex>
+                    <md-button class="md-raised search " style="width:100%;" ng-click="preferences.closePreferences()">Cancel</md-button>
+                </div>
+                <div flex>
+                    <md-button class="md-raised md-primary search" style="width:100%;" type="submit" ng-click="preferences.savePreferences()">
+                        Save 
+                    </md-button>
+                </div>
+            </div>
+
+        </form>
+    </md-content>
+</md-dialog>

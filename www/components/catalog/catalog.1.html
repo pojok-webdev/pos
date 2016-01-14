@@ -1,0 +1,172 @@
+<div class="height" layout="row" ng-controller="CatalogController as catalog">
+  <div flex class="height-left">
+    <md-toolbar class="toolbar-fixed">
+      <div class="md-toolbar-tools">
+        <span flex>
+	  <gandalf-sidemenu></gandalf-sidemenu>
+        </span> Kasir - {{catalog.register.name}} - {{catalog.store.name}}
+
+        <span flex>
+        </span>
+        <span flex>
+          <gandalf-login hide-gt-sm></gandalf-login>
+        </span>
+      </div>
+    </md-toolbar>
+    <input type="hidden" ng-model="drinkFilter.description" ng-init="drinkFilter.categoryNames='drink'" value="drink">
+    <input type="hidden" ng-model="foodFilter.description" ng-init="foodFilter.categoryNames='food'" value="food">
+    <input type="hidden" ng-model="packageFilter.description" ng-init="packageFilter.categoryNames='package'" value="package">
+    <md-content layout-padding>
+      <md-input-container md-no-float style="width:100%">
+        <input placeholder="Search" ng-model="q.productName">
+      </md-input-container>
+      <br>
+      <md-tabs md-dynamic-height md-border-bottom>
+        <md-tab label="All">
+          <md-content class="md-padding">
+            <md-grid-list md-cols-sm="1" md-cols-md="2" md-cols-gt-md="5" md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="12px"
+                          md-gutter-gt-sm="8px">
+              <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" ng-repeat="i in catalog.data.Items | filter:q">
+                <img src={{i.imageUrl}} width="100%" height="100%" ng-click="catalog.addToCart(i)">
+                <br>
+                <md-grid-tile-footer>
+                  <h3>{{i.productName}}</h3>
+                  <h4>{{i.sellPrice | currency:'Rp. ':0}}</h4>
+                </md-grid-tile-footer>
+              </md-grid-tile>
+            </md-grid-list>
+            </md-content>
+        </md-tab>
+        <md-tab label="Food">
+          <md-content class="md-padding">
+            <md-grid-list md-cols-sm="1" md-cols-md="2" md-cols-gt-md="5" md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="12px"
+                          md-gutter-gt-sm="8px">
+              <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" ng-repeat="i in catalog.data.Items | filter:foodFilter | filter:q">
+                <img src={{i.imageUrl}} width="100%" height="100%" ng-click="catalog.addToCart(i)">
+                <br>
+                <md-grid-tile-footer>
+                  <h3>{{i.productName}}</h3>
+                  <h4>{{i.sellPrice | currency:'Rp. ':0}}</h4>
+                </md-grid-tile-footer>
+              </md-grid-tile>
+            </md-grid-list>
+            </md-content>
+        </md-tab>
+        <md-tab label="Drink">
+          <md-content class="md-padding">
+            <md-content class="md-padding">
+              <md-grid-list md-cols-sm="1" md-cols-md="2" md-cols-gt-md="5" md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="12px"
+                            md-gutter-gt-sm="8px">
+                <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" ng-repeat="i in catalog.data.Items | filter:drinkFilter | filter:q">
+                  <img src={{i.imageUrl}} width="100%" height="100%" ng-click="catalog.addToCart(i)">
+                  <br>
+                  <md-grid-tile-footer>
+                    <h3>{{i.productName}}</h3>
+                    <h4>{{i.sellPrice | currency:'Rp. ':0}}</h4>
+                  </md-grid-tile-footer>
+                </md-grid-tile>
+              </md-grid-list>
+            </md-content>
+          </md-content>
+        </md-tab>
+        <md-tab label="Paket">
+          <md-content class="md-padding">
+            <md-content class="md-padding">
+              <md-grid-list md-cols-sm="1" md-cols-md="2" md-cols-gt-md="5" md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="12px"
+                            md-gutter-gt-sm="8px">
+                <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1" ng-repeat="i in catalog.data.Items | filter:packageFilter | filter:q as results">
+                  <img src={{i.imageUrl}} width="100%" height="100%" ng-click="catalog.addToCart(i)">
+                  <br>
+                  <md-grid-tile-footer>
+                    <h3>{{i.productName}}</h3>
+                    <h4>{{i.sellPrice | currency:'Rp. ':0}}</h4>
+                  </md-grid-tile-footer>
+                </md-grid-tile>
+              </md-grid-list>
+            </md-content>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+
+      <div>
+
+      </div>
+      <br>
+      <br>
+
+    </md-content>
+    <div class="footer-left" hide-sm>
+      <md-button style="float: right;     margin-bottom: 0px;
+			margin-top: 0px;" ng-click="catalog.customSale()"> Custom Sale</md-button>
+    </div>
+    <div class="footer-left-sm" hide-gt-sm >
+      <md-button style="float: left;     margin-bottom: 0px;
+			margin-top: 0px;" ng-click="catalog.customSale()"> Custom Sale</md-button>
+      <md-button style="float: right;     margin-bottom: 0px;
+      margin-top: 0px;" ui-sref="cart"> Checkout</md-button>
+    </div>
+  </div>
+
+
+
+  <!-- ======== CART ==========-->
+
+  <div flex="35" style="background: #FAFAFA" class="height-right" hide-sm>
+    <md-toolbar class="md-primary md-hue-1 toolbar-fixed">
+      <div class="md-toolbar-tools">
+        <span flex>
+
+        </span>Cart
+
+        <span flex>
+           <gandalf-login style="padding-right: 20px;"></gandalf-login>
+        </span>
+        <span flex>
+        </span>
+        <span flex>
+
+        </span>
+         <span flex="5">
+
+        </span>
+        <span flex>
+
+        </span>
+        <span flex>
+        </span>
+
+      </div>
+    </md-toolbar>
+
+   <!-- <md-toolbar class="md-primary md-hue-1 toolbar-fixed">
+
+      <div class="md-toolbar-tools">
+	<span>Cart</span>
+	<span>
+	  <gandalf-login></gandalf-login>
+	</span>
+      </div>
+    </md-toolbar>-->
+    <md-content style="background:#FAFAFA; height: 90%" layout-padding>
+      <div class="cart-item">
+        <md-list>
+          <md-list-item ng-click="catalog.qty(i)" ng-repeat="i in catalog.order.orders">
+            <img src={{i.imageUrl}} class="md-avatar"  />
+            <p style="font-size: 1em;">{{i.productId}} - {{i.name}} ({{i.qty}})</p>
+            <a style="font-size: 1em;">Rp. {{i.subTotal|number}}</a>
+            <md-divider></md-divider>
+          </md-list-item>
+
+
+        </md-list>
+      </div>
+    </md-content>
+    <div class="checkout" ng-click="catalog.checkOut(catalog.order)">
+      <a style="    position: absolute;
+    top: 0px;
+    font-size: 0.8em;">Checkout</a>
+      <a style="font-size: 1.5em;">Total</a>
+      <a style="float: right; font-size: 1.5em;">Rp. {{catalog.order.total|number}}</a>
+    </div>
+  </div>
+</div>

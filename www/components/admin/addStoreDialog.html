@@ -1,0 +1,26 @@
+<md-dialog >
+    <md-content>
+        <md-subheader>ADD STORE</md-subheader>
+
+        <div layout-padding >
+            <p flex style='text-align:center;' ></p>
+        </div>
+		<div flex layout="column" layout-align="center center">
+			<md-content class='md-padding'>
+				 Store Id: <input type="text" data-ng-model="dialog.storeId">
+				 Name: <input type="text" data-ng-model="dialog.storeName">
+				 Address: <input type="text" data-ng-model="dialog.storeAddress">
+			</md-content>
+		</div>
+        <div layout="row" layout-padding>
+            <div flex>
+                <md-button  ng-click="dialog.saveStore()" class="md-raised search ">
+                    Save
+                </md-button>
+                <md-button  ng-click="dialog.closeDialog()" class="md-raised search ">
+                    Close
+                </md-button>
+            </div>
+        </div>
+    </md-content>
+</md-dialog>

@@ -1,0 +1,29 @@
+<md-dialog>
+    <md-content layout-padding>
+        <md-subheader style="    background: grey;
+    margin: 0px;
+    width: 100%;
+    color: white;">Add Company</md-subheader>
+        <form >
+            <br>
+            <md-input-container>
+                <label>Company Name</label>
+                <input type="text" ng-model="company.name" name="title" >
+
+            </md-input-container>
+            <md-input-container>
+                <label>Address</label>
+                <textarea ng-model="company.address"></textarea>
+            </md-input-container>
+            <div layout="row" layout-padding>
+                <div flex>
+                    <md-button class="md-raised search " >Cancel</md-button>
+                </div>
+                <div flex>
+                    <md-button class="md-raised md-primary search" type="submit" ng-click="cmp.saveCompany()">Add </md-button>
+                </div>
+            </div>
+
+        </form>
+    </md-content>
+</md-dialog>

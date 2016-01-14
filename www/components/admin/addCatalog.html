@@ -1,0 +1,22 @@
+<md-dialog  ng-controller="AdminController as admin">
+    <md-content layout-padding >
+        <div class="header-dialog">Add Catalog</div>
+        <form >
+            <br>
+            <md-input-container>
+                <label>Catalog Name</label>
+                <input type="text" name="title" ng-model="catalog.name">
+            </md-input-container>
+
+            <div layout="row" layout-padding style="padding-left: 0px">
+                <div flex>
+                    <md-button class="md-raised search "style="width:100%;" >Cancel</md-button>
+                </div>
+                <div flex>
+                    <md-button class="md-raised md-primary search" style="width:100%;" type="submit" ng-click="admin.saveCatalog(catalog)">Add </md-button>
+                </div>
+            </div>
+
+        </form>
+    </md-content>
+</md-dialog>

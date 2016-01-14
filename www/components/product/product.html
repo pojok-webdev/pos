@@ -1,0 +1,141 @@
+<md-toolbar class="toolbar-fixed">
+    <div class="md-toolbar-tools">
+        <gandalf-sidemenu></gandalf-sidemenu>
+        <span hide-gt-sm flex></span>
+    <span hide-gt-sm>
+    Catalog
+      </span>
+    <span hide-sm>
+            <md-menu style="padding-left: 10px">
+                <span ng-click="$mdOpenMenu($event)"><ng-md-icon style="fill:white;top: 3px; position: relative; "
+                                                                 size="25"
+                                                                 icon="domain"></ng-md-icon>Choose Companys</span>
+                <md-menu-content width="4" layout-padding>
+                    <md-menu-item ng-click="product.addCompany()">
+                        <ng-md-icon style="fill:grey; width: auto; padding-left: 0px; padding-right: 5px;" size="20"
+                                    icon="add_circle"></ng-md-icon>
+                        <a style="padding-left: 0px;">Add New</a>
+                    </md-menu-item>
+                    <md-divider></md-divider>
+                    <md-menu-item ui-sref="company({companyId:item.companyId})" ng-repeat="item in product.companies">
+                        {{item.name}}
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+             <md-menu>
+                 <span><ng-md-icon style="fill:white;top: 3px; position: relative; " size="25"
+                                   icon="location_on"></ng-md-icon>Site</span>
+                 <md-menu-content width="4" layout-padding>
+                     <md-menu-item ng-click="product.addSite()">
+                         <ng-md-icon style="fill:grey; width: auto; padding-left: 0px; padding-right: 5px;" size="20"
+                                     icon="add_circle"></ng-md-icon>
+                         <a style="padding-left: 0px;">Add New</a>
+                     </md-menu-item>
+                 </md-menu-content>
+             </md-menu>
+             <md-menu>
+                 <span><ng-md-icon style="fill:white;top: 3px; position: relative; " size="25"
+                                   icon="store_mall_directory"></ng-md-icon>POS</span>
+                 <md-menu-content width="4" layout-padding>
+                     <md-menu-item ng-click="product.addPos()">
+                         <ng-md-icon style="fill:grey; width: auto; padding-left: 0px; padding-right: 5px;" size="20"
+                                     icon="add_circle"></ng-md-icon>
+                         <a style="padding-left: 0px;">Add New</a>
+                     </md-menu-item>
+                 </md-menu-content>
+             </md-menu>
+            <md-menu>
+                <span ng-click="$mdOpenMenu($event)"><ng-md-icon style="fill:white;top: 3px; position: relative; "
+                                                                 size="25" icon="shopping_basket"></ng-md-icon>{{product.catalog.name}}</span>
+                <md-menu-content width="4" layout-padding>
+                    <md-menu-item ng-click="product.addCatalog()">
+                        <ng-md-icon style="fill:grey; width: auto; padding-left: 0px; padding-right: 5px;" size="20"
+                                    icon="add_circle"></ng-md-icon>
+                        <a style="padding-left: 0px;">Add New</a>
+                    </md-menu-item>
+                    <md-divider></md-divider>
+                    <md-menu-item ui-sref="product({catalogId:item.catalogId})" ng-repeat="item in product.catalogs">
+                        {{item.name}}
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+</span>
+        <span flex>
+
+    </span>
+        <gandalf-login style="float: right;
+    position: relative;
+    right: -10px;
+    cursor: pointer;"></gandalf-login>
+    </div>
+</md-toolbar>
+<md-content layout-padding style=" padding-top: 80px;">
+    <div class="dialog-head">
+        <ng-md-icon style="fill:white;top: 3px; position: relative; " size="22" icon="shopping_basket"></ng-md-icon>
+        {{product.catalog.name}}
+        <ng-md-icon ng-click="product.editCatalog()" style="fill:white; float:right; " size="25" icon="settings">
+    </div>
+    <!--<md-list>
+        <md-list-item >
+            <img src="components/product/img/catalog1.jpg" class="md-avatar" />
+            <div class="md-list-item-text" layout="column">
+                <h4 style="margin: 0px;">Product1</h4>
+                <p style="margin: 0px;">Rp. 30000</p>
+            </div>
+            <ng-md-icon ng-click="product.editProduct()" style="fill: grey;float: right; width: auto; padding-left: 0px;position: absolute;padding-right: 5px;right: 0px; top: 10px;" size="30" icon="edit"></ng-md-icon>
+            <md-divider></md-divider>
+        </md-list-item>
+        <md-list-item >
+            <img src="components/product/img/catalog1.jpg" class="md-avatar" />
+            <div class="md-list-item-text" layout="column">
+                <h4 style="margin: 0px;">Product1</h4>
+                <p style="margin: 0px;">Rp. 30000</p>
+            </div>
+            <ng-md-icon ng-click="product.editProduct()" style="fill: grey;float: right; width: auto; padding-left: 0px;position: absolute;padding-right: 5px;right: 0px; top: 10px;" size="30" icon="edit"></ng-md-icon>
+            <md-divider></md-divider>
+        </md-list-item>
+        <md-list-item >
+            <img src="components/product/img/catalog1.jpg" class="md-avatar" />
+            <div class="md-list-item-text" layout="column">
+                <h4 style="margin: 0px;">Product1</h4>
+                <p style="margin: 0px;">Rp. 30000</p>
+            </div>
+            <ng-md-icon ng-click="product.editProduct()" style="fill: grey;float: right; width: auto; padding-left: 0px;position: absolute;padding-right: 5px;right: 0px; top: 10px;" size="30" icon="edit"></ng-md-icon>
+            <md-divider></md-divider>
+        </md-list-item>
+
+    </md-list>-->
+    <md-grid-list
+            md-cols-sm="1" md-cols-md="4" md-cols-gt-md="6"
+            md-row-height-gt-md="1:1" md-row-height="2:2"
+            md-gutter="12px" md-gutter-gt-sm="8px" style="    padding-top: 10px;">
+        <md-grid-tile ng-click="product.editProduct(item)" md-rowspan="1" md-colspan="1" md-colspan-sm="1"
+                      ng-repeat="item in product.products track by $index">
+            <img src="{{item.imageUrl}}" width="100%" height="100%" alt="Display Not Available"
+                 onError="this.src='./components/product/img/no-product-50px.jpg'"><br>
+            <md-grid-tile-footer>
+                <h3>{{item.productName}}</h3>
+                <h4>{{item.sellPrice | currency:'Rp. ':0}}</h4>
+            </md-grid-tile-footer>
+        </md-grid-tile>
+    </md-grid-list>
+    <!--<md-grid-list
+            md-cols-sm="1" md-cols-md="4" md-cols-gt-md="5"
+            md-row-height-gt-md="1:1" md-row-height="2:2"
+            md-gutter="12px" md-gutter-gt-sm="8px" style="    padding-top: 10px;">
+        <md-grid-tile ng-click="product.editProduct(item)"  md-rowspan="1" md-colspan="1" md-colspan-sm="1"  >
+            <img src="./img/product/hotlemontea.jpg" width="100%" height="100%"><br>
+            <md-grid-tile-footer >
+                <h3>hot lemon tea</h3>
+                <h4>Rp. 500000</h4>
+            </md-grid-tile-footer>
+        </md-grid-tile>
+    </md-grid-list>-->
+
+    <br><br><br>
+</md-content>
+<div class="add-button">
+    <md-button ng-click="product.addProduct()" class="md-fab md-primary md-raised" aria-label="add">
+        <ng-md-icon icon="add" style="fill: white"></ng-md-icon>
+    </md-button>
+</div>

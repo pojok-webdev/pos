@@ -1,0 +1,74 @@
+<div ng-controller="ReceiptController as receipt" ng-cloak>
+  <md-grid-list md-cols="3" md-row-height="200px">
+    <md-grid-tile md-colspan=3>
+    </md-grid-tile>
+    <md-grid-tile class="gray">
+    </md-grid-tile>
+    <md-grid-tile class="gray">
+  
+        <div class="receipt">
+        <div layout="row">
+          <div flex>RECEIPT</div>
+        </div>
+        <md-divider></md-divider>
+        <md-divider></md-divider>
+        <div layout="row">
+          <div flex>
+            <a>Order ID:</a>
+            <br>
+            <a>Date:</a>
+            <br>
+            <a>company, site, pos:</a>
+            <br>
+          </div>
+          <div flex style="text-align: right;">
+            <a>1234567</a>
+            <br>
+            <a>12 NOP 2015</a>
+            <br>
+            <a>Bagubagu, Medan, pos1</a>
+            <br>
+          </div>
+        </div>
+        <br>
+        <md-divider></md-divider>
+        <br>
+        <div layout="row" ng-repeat="item in receipt.order.orders">
+          <div flex>
+            <a>{{item.name}} ({{item.qty}})</a>
+            <br>
+          </div>
+          <div flex style="text-align: right;">
+            <a>{{item.subTotal|number}}</a>
+            <br>
+          </div>
+        </div>
+
+        <md-divider></md-divider>
+        <br>
+        <div layout="row">
+          <div flex>
+            <a>Total</a>
+            <br>
+            <a>Cash</a>
+            <br>
+            <a>Change</a>
+            <br>
+          </div>
+          <div flex style="text-align: right;">
+            <a>{{receipt.order.total|number}}</a>
+            <br>
+            <a>{{receipt.order.custCash|number}}</a>
+            <br>
+            <a>{{receipt.order.change|number}}</a>
+            <br>
+          </div>
+        </div>
+      </div>
+    </md-grid-tile>
+    <md-grid-tile class="gray">
+    <span ui-sref="catalog({registerId:receipt.order.registerId})" style="cursor:pointer">Back</span>
+      
+    </md-grid-tile>
+  </md-grid-list>
+</div>

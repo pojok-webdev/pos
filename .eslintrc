@@ -1,0 +1,8 @@
+{
+  "extends": "airbnb/base",
+  "extends": "angular",
+  "ecmaFeatures": {
+    "blockBindings": true,
+    "modules": true
+  }
+}

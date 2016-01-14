@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+</head>
+
+<body>
+
+<md-sidenav md-component-id="left" class="md-sidenav-left">
+    <md-content layout-padding>
+        <md-list>
+        <span ui-sref="catalog">
+	  <md-list-item>
+          <a style="text-decoration: none;color: black;">CATALOG</a>
+      </md-list-item>
+            </span>
+            <md-divider></md-divider>
+        <span ui-sref="admin">
+	  <md-list-item>
+          <a style="text-decoration: none;color: black;">ADMIN</a>
+      </md-list-item>
+            </span>
+            <md-divider></md-divider>
+            <span ui-sref="dashboard">
+	  <md-list-item>
+          <a style="text-decoration: none;color: black;">DASHBOARD</a>
+      </md-list-item>
+            </span>
+            <md-divider></md-divider>
+        <span ui-sref="login">
+              <md-list-item>
+                  <a style="text-decoration: none;color: black;">LOGIN</a>
+              </md-list-item>
+            </span>
+            <md-divider></md-divider>
+        </md-list>
+    </md-content>
+</md-sidenav>
+
+<ui-view></ui-view>
+
+<script src="./bower_components/aws-sdk/dist/aws-sdk.js"></script>
+<script src="./components/bagulogin/amazon-cognito.min.js"></script>
+<script src="./bower_components/auth0-lock/build/auth0-lock.js"></script>
+<script src="bundle.js"></script>
+</body>
+</html>

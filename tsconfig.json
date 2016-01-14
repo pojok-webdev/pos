@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+	"module": "commonjs",
+        "outDir": "www",
+        "rootDir": "www"
+    },
+    "exclude": [
+        "node_modules",
+	"platforms"
+    ]
+}

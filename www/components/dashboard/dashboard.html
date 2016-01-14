@@ -1,0 +1,79 @@
+<md-toolbar>
+  <div class="md-toolbar-tools">
+    <gandalf-sidemenu></gandalf-sidemenu>
+    <span flex>
+    </span>Dashboard
+    <span flex>
+    </span>
+    <span>
+      <gandalf-login></gandalf-login>
+    </span>
+  </div>
+</md-toolbar>
+<md-content layout-padding>
+  <div layout="row"  layout-padding>
+    <span flex="30" flex-sm="50">
+      <md-input-container class="md-block">
+        <label>Company</label>
+        <md-select name="myModel"
+		ng-model="dashboard.choice" required
+		ng-change="dashboard.changeCompany()">
+          <md-option ng-value="item" ng-repeat="item in dashboard.companies">
+	    {{item.name}}
+	  </md-option>
+        </md-select>
+      </md-input-container>
+    </span>
+    <span flex>
+      <md-button class="md-raised md-accent" ng-click="dashboard.addCompany()">
+    	 <!--<ng-md-icon size="20" icon="add_circle" style="fill: white; margin-top: 5px;"></ng-md-icon>-->Create new company
+      </md-button>
+    </span>
+  </div>
+<div layout="row" layout-sm="column" layout-padding>
+    <div flex>
+      <h3 style="text-align: center">Total Sales</h3>
+      <canvas id="barChart" class="chart chart-bar" chart-data="dashboard.barData" chart-labels="dashboard.barLabels" chart-series="dashboard.barSeries"
+      chart-legend="true" chart-click="onClick">
+      </canvas>
+      <md-input-container class="md-block">
+        <label>Store</label>
+        <md-select name="myModel" ng-model="store" required ng-change="dashboard.changeStore()" multiple>
+
+          <md-option ng-value="{{item}}" ng-repeat="item in dashboard.stores">{{item.name}}</md-option>
+        </md-select>
+      </md-input-container>
+    </div>
+    <div flex style="text-align: center">
+      <h3 style="text-align: center">Outlet</h3>
+      <canvas id="doughnut" class="chart chart-doughnut" chart-data="dashboard.donutData" chart-labels="dashboard.donutLabels"
+      chart-legend="true">
+      </canvas>
+      <div layout="row" layout-padding>
+        <div flex>
+          <md-datepicker ng-model="dashboard.startDate" md-placeholder="Enter date" ng-change="dashboard.updateDonut()"></md-datepicker>
+
+        </div>
+        <div flex="10" style="margin: auto;">
+          <a>To</a>
+        </div>
+        <div flex>
+          <md-datepicker ng-model="dashboard.endDate" md-placeholder="Enter date" ng-change="dashboard.updateDonut()"></md-datepicker>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!--<div layout="row" layout-sm="column" layout-padding>-->
+    <!--<div flex="=">-->
+      <!--dkjagdjkadgad-->
+      <!--adhkadkajhgd-->
+      <!--adahdakdgkaj-->
+      <!--adhadk-->
+    <!--</div>-->
+    <!--<div flex>-->
+      <!--flex dua-->
+    <!--</div>-->
+  <!--</div>-->
+</md-content>

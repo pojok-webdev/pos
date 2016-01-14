@@ -1,0 +1,30 @@
+<ng-md-icon style="float:right; padding-right:0px;fill: white;" ng-if="!isLogin" ng-click="login()" icon="login"  size="38"></ng-md-icon>
+<!--<md-button style="float:right; right:10px" ng-if="!isLogin" ng-click="login()">login</md-button>-->
+<!--<md-select name="loginSelect"
+	ng-if="isLogin"
+	aria-label="login menu"
+	ng-model="loginSelectModel"
+	ng-change="loginSelectChange()">
+  <md-option
+	  ng-value="item"
+	  ng-repeat="item in loginSelectItems">
+    {{item.label}}
+  </md-option>
+</md-select>
+-->
+
+
+
+            <md-menu style="float:right; padding-right:0px;" ng-if="isLogin" ng-model="loginSelectModel">
+                <ng-md-icon ng-click="$mdOpenMenu($event)" icon="account_circle" style="fill: white" size="38"></ng-md-icon>
+               <!-- <span ng-click="$mdOpenMenu($event)">Hello, {{profile.name}}</span>-->
+                <md-menu-content width="2" layout-padding>
+                    <md-menu-item>Hello, {{profile.name}}</md-menu-item>
+                    <md-divider></md-divider>
+                    <md-menu-item style="cursor:pointer" ng-repeat="item in loginSelectItems" ng-value="item"  ng-click="loginSelectChange(item)">
+                        {{item.label}}
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+
+

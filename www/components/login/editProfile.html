@@ -1,0 +1,50 @@
+<md-dialog style="width: 60%">
+    <md-content layout-padding>
+        <div class="header-dialog1" style="width: 97%">Edit Profile</div>
+        <form>
+            <br>
+            <md-input-container>
+                <label>User Name</label>
+                <input ng-model="user.name">
+            </md-input-container>            
+
+            <md-input-container>
+                <label>Email</label>
+                <input ng-model="user.email">
+            </md-input-container>            
+
+            <md-input-container>
+                <label>Address</label>
+                <input ng-model="user.address">
+            </md-input-container>            
+
+            <md-input-container>
+                <label>City</label>
+                <input ng-model="user.city">
+            </md-input-container>            
+
+            <md-input-container>
+                <label>Phone</label>
+                <input ng-model="user.phone">
+            </md-input-container>            
+
+            <div layout="row" layout-padding style="padding-left: 0px">
+                <div flex>
+                    <md-button class="md-accent" ng-click="profile.clearData()">Clear Data</md-button>
+                </div>
+                <div flex>
+                </div>
+            </div>
+
+            <div layout="row" layout-padding style="padding-left: 0px">
+                <div flex>
+                    <md-button class="md-raised search " style="width:100%;" ng-click="profile.closeDialog()">Cancel</md-button>
+                </div>
+                <div flex>
+                    <md-button class="md-raised md-primary search" style="width:100%;" type="submit" ng-click="profile.saveProfile(user)">Save </md-button>
+                </div>
+            </div>
+
+        </form>
+    </md-content>
+</md-dialog>

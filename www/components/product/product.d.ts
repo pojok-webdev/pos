@@ -1,0 +1,4 @@
+
+interface Window {
+    AWS: any;
+}

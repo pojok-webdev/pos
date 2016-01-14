@@ -1,0 +1,25 @@
+<md-dialog style="width: 100%" ng-controller="CompanyController as company">
+    <div class="header-dialog1">Edit Company</div>
+    <md-content layout-padding>
+        <form>
+            <md-input-container>
+                <label>Company Name</label>
+                <input ng-model="company.company.name">
+            </md-input-container>
+            <md-input-container>
+                <label>Address</label>
+                <textarea ng-model="company.company.address"></textarea>
+            </md-input-container>
+            <md-input-container>
+                <label>Phone</label>
+                <input ng-model="company.company.phone">
+            </md-input-container>
+            <md-input-container>
+                <label>Email</label>
+                <input ng-model="company.company.email">
+            </md-input-container>
+        </form>
+        <md-button style="float: right" class="md-raised md-primary" ng-click="company.update(company.company)"> Save</md-button>
+        <md-button style="float: right" class="md-raised" ng-click="company.remove(company.company)"> Delete</md-button>
+    </md-content>
+</md-dialog>
